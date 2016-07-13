@@ -11,16 +11,19 @@ gcloud compute instances list
 ```
 
 ````
-NAME         ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP      STATUS
-controller0  us-central1-f  n1-standard-1               10.240.0.20  XXX.XXX.XXX.XXX  RUNNING
-controller1  us-central1-f  n1-standard-1               10.240.0.21  XXX.XXX.XXX.XXX  RUNNING
-controller2  us-central1-f  n1-standard-1               10.240.0.22  XXX.XXX.XXX.XXX  RUNNING
-etcd0        us-central1-f  n1-standard-1               10.240.0.10  XXX.XXX.XXX.XXX  RUNNING
-etcd1        us-central1-f  n1-standard-1               10.240.0.11  XXX.XXX.XXX.XXX  RUNNING
-etcd2        us-central1-f  n1-standard-1               10.240.0.12  XXX.XXX.XXX.XXX  RUNNING
-worker0      us-central1-f  n1-standard-1               10.240.0.30  XXX.XXX.XXX.XXX  RUNNING
-worker1      us-central1-f  n1-standard-1               10.240.0.31  XXX.XXX.XXX.XXX  RUNNING
-worker2      us-central1-f  n1-standard-1               10.240.0.32  XXX.XXX.XXX.XXX  RUNNING
++--------------------------------------+------------------------------+--------+------------+-------------+------------------------------------------------------------------------------------------------------------------+
+| ID                                   | Name                         | Status | Task State | Power State | Networks                                                                                                         |
++--------------------------------------+------------------------------+--------+------------+-------------+------------------------------------------------------------------------------------------------------------------+
+| 21598d90-91c9-48e6-9f49-f01e0165112a | shane-kubernetes-controller0 | ACTIVE | -          | Running     | public=104.130.155.17, 2001:4800:7818:103:be76:4eff:fe06:7453; private=10.209.8.207; dfw-overlay-net=10.0.2.4    |
+| f49129a5-1a7f-4758-8742-842748798213 | shane-kubernetes-controller1 | ACTIVE | -          | Running     | public=104.130.155.23, 2001:4800:7818:103:be76:4eff:fe05:c493; private=10.209.8.211; dfw-overlay-net=10.0.2.5    |
+| a6bf33d0-9825-4500-9557-5967a098b54c | shane-kubernetes-controller2 | ACTIVE | -          | Running     | public=23.253.246.81, 2001:4800:7818:101:be76:4eff:fe06:f1c; private=10.208.233.106; dfw-overlay-net=10.0.2.6    |
+| de5195d7-8bb9-412a-a28e-b2735e90aa1f | shane-kubernetes-etcd0       | ACTIVE | -          | Running     | public=104.130.124.192, 2001:4800:7818:104:be76:4eff:fe04:bc6b; private=10.209.32.30; dfw-overlay-net=10.0.2.1   |
+| 4b4f8f2a-898e-4980-8db7-7ef2cf71f966 | shane-kubernetes-etcd1       | ACTIVE | -          | Running     | public=104.239.143.115, 2001:4800:7818:104:be76:4eff:fe04:e7cc; private=10.209.33.248; dfw-overlay-net=10.0.2.2  |
+| 9d0d9b28-43d6-4829-9e41-b5d13cb24c69 | shane-kubernetes-etcd2       | ACTIVE | -          | Running     | public=104.130.155.5, 2001:4800:7818:103:be76:4eff:fe04:5a02; private=10.209.8.142; dfw-overlay-net=10.0.2.3     |
+| 2bb97e7a-51a2-41d1-b8d9-0d13ebe652dc | shane-kubernetes-worker0     | ACTIVE | -          | Running     | public=2001:4800:7818:101:be76:4eff:fe04:8b0b, 104.130.143.37; private=10.208.234.107; dfw-overlay-net=10.0.2.7  |
+| fbe04f2a-cddc-4a9b-9deb-e5d61aac21b6 | shane-kubernetes-worker1     | ACTIVE | -          | Running     | public=2001:4800:7818:101:be76:4eff:fe06:1faf, 104.130.143.98; private=10.208.234.119; dfw-overlay-net=10.0.2.8  |
+| 542ab073-16a3-4bc7-a9ae-3bb445a1e9c4 | shane-kubernetes-worker2     | ACTIVE | -          | Running     | public=2001:4800:7818:101:be76:4eff:fe04:9e45, 104.130.143.102; private=10.208.235.125; dfw-overlay-net=10.0.2.9 |
++--------------------------------------+------------------------------+--------+------------+-------------+------------------------------------------------------------------------------------------------------------------+
 ````
 
 > All machines will be provisioned with fixed private IP addresses to simplify the bootstrap process.
