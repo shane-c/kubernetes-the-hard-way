@@ -135,104 +135,95 @@ All the VMs in this lab will be provisioned using Ubuntu 16.04 mainly because it
 ### etcd
 
 ```
-gcloud compute instances create etcd0 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.10 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-etcd0
 ```
 
 ```
-gcloud compute instances create etcd1 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.11 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-etcd1
 ```
 
 ```
-gcloud compute instances create etcd2 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.12 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-etcd2
 ```
 
 ### Kubernetes Controllers
 
 ```
-gcloud compute instances create controller0 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.20 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-controller0
 ```
 
 ```
-gcloud compute instances create controller1 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.21 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-controller1
 ```
 
 ```
-gcloud compute instances create controller2 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.22 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-controller2
 ```
 
 ### Kubernetes Workers
 
 ```
-gcloud compute instances create worker0 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.30 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-worker0
 ```
 
 ```
-gcloud compute instances create worker1 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.31 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-worker1
 ```
 
 ```
-gcloud compute instances create worker2 \
- --boot-disk-size 200GB \
- --can-ip-forward \
- --image ubuntu-1604-xenial-v20160627 \
- --image-project ubuntu-os-cloud \
- --machine-type n1-standard-1 \
- --private-network-ip 10.240.0.32 \
- --subnet kubernetes
+nova boot --flavor general1-2 \
+  --image 1d3ea64f-1ead-4042-8cb6-8ceb523b6149 \
+  --key-name shane-dfw \
+  --nic net-id=a95acf2f-4ca7-49d8-a60a-3e57613a13f0 \
+  --nic net-id=00000000-0000-0000-0000-000000000000 \
+  --nic net-id=11111111-1111-1111-1111-111111111111 \
+  shane-kubernetes-worker2
 ```
